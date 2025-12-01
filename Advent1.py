@@ -18,4 +18,6 @@ for entry in df[0]:
     if position == 0:
         counter += 1
 
-print(counter)
+print("Part 1: " + counter)
+
+
