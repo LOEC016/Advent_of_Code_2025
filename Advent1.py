@@ -1,5 +1,6 @@
 import pandas as pd
 
+#START PART 1
 position = 50 #start
 counter = 0 
 
@@ -18,9 +19,10 @@ for entry in df[0]:
     if position == 0:
         counter += 1
 
-print("Code part 1: " +  str(counter))
+print("Code part 1: " +  str(counter)) #Code part 1: 1031
 #END PART ONE
 
+#START PART 2
 df = pd.read_csv(r".venv\input.txt", header=None, dtype=str)
 position = 50 #start
 counter = 0 #reset
@@ -38,13 +40,15 @@ for entry in df[0]:
 
     new_position = (position + spins) % dials
     if spins > 0:
+        #Right
         passed_zeros = ((position + spins) // dials) - (position // dials)
     else:
+        #Left
         passed_zeros = ((position - 1) // dials) - ((position + spins - 1) // dials)
-
     counter += passed_zeros
 
 
     position = new_position
 
-print("Code part 2: " + str(counter))
+print("Code part 2: " + str(counter)) #Code part 2: 5831
+#END PART TWO
